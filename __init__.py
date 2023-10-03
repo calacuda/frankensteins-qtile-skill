@@ -56,9 +56,11 @@ class FrankensteinsQtile(MycroftSkill):
 
     @intent_handler("qtile.frankensteins.auto-desk-layout.intent")
     def handle_auto_desk_layout(self, message):
-        group = message.data.get("layout")
+        layout = message.data.get("layout")
 
-        if not self.is_group(group): return
+        if not layout: 
+            self.speak("there was no layout in that utterance")
+            return
 
         # TODO: add error handling incase url not reachable
         res = requests.get(self.mk_url(f"/auto-desk/layout/{layout}"))
