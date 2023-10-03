@@ -25,9 +25,10 @@ class FrankensteinsQtile(MycroftSkill):
         if not self.is_group(group): return
 
         self.log.info(f"switching qtile focus to group {group}")
+        # TODO: add error handling incase url not reachable
         res = requests.get(self.mk_url(f"focus-on/{group}"))
 
-        if res.body.startswith("no group"):
+        if res.content.startswith("no group"):
             spelling = ", ".join(group)
             self.log.info(f"focus shifting failed")
             self.speak(f"{group.title()} spelled {spelling} is not a group name. Failed to switch focus.")
@@ -42,9 +43,10 @@ class FrankensteinsQtile(MycroftSkill):
         if not self.is_group(group): return
 
         self.log.info(f"moving window to the group called {group}")
+        # TODO: add error handling incase url not reachable
         res = requests.get(self.mk_url(f"move-to/{group}"))
         
-        if res.body.startswith("no group"):
+        if res.content.startswith("no group"):
             spelling = ", ".join(group)
             self.log.info(f"moving of window failed")
             self.speak(f"{group.title()} spelled {spelling} is not a group name. Failed to move window.")
@@ -58,6 +60,7 @@ class FrankensteinsQtile(MycroftSkill):
 
         if not self.is_group(group): return
 
+        # TODO: add error handling incase url not reachable
         res = requests.get(self.mk_url(f"/auto-desk/layout/{layout}"))
 
         spelling = ", ".join(layout)
