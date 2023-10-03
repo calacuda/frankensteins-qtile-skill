@@ -6,13 +6,13 @@ class FrankensteinsQtile(MycroftSkill):
     def __init__(self):
         MycroftSkill.__init__(self)
 
-    def mk_url(path: str):
+    def mk_url(self, path: str):
         """used to make urls for the API calls"""
         path = ("/" + path).replace("//", "/")
         ip = self.settings.get("nebula_ip") 
         return f"http://{ip}{path}"
 
-    def is_group(group) -> bool:
+    def is_group(self, group) -> bool:
         if not group:
             self.speak("sorry, but, could not find a group name in the utterance.")
         
