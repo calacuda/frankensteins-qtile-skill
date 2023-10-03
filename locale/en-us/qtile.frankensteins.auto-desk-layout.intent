@@ -1,3 +1,6 @@
-(load|set up) the {layout}(dot yaml|.yaml|.yml|) (layout|)
+(load|set up) the {layout}(dot yaml|.yaml|.yml|) layout
+(load|set up) the layout {layout}(dot yaml|.yaml|.yml|)
 use the {layout}(dot yaml|.yaml|.yml|) layout
-configure (the|) {layout}(dot yaml|.yaml|.yml|) (layout|)
+use the layout {layout}(dot yaml|.yaml|.yml|)
+configure (the|) {layout}(dot yaml|.yaml|.yml|) layout
+configure (the|) layout {layout}(dot yaml|.yaml|.yml|)
