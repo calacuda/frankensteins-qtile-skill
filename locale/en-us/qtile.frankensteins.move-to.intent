@@ -1,1 +1,1 @@
-(move|send) window to (desktop|group|) {group}
+(move|send) window to (desktop (number|)|group (number|)|) {group}
