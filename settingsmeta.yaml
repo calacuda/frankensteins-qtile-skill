@@ -1,22 +1,21 @@
-
 skillMetadata:
   sections:
-    - name: Options << Name of section
+    - name: Options
       fields:
-        - name: internal_python_variable_name
+        - name: nebula_ip
           type: text
-          label: Setting Friendly Display Name
+          label: Qtile Nebula IP
           value: ""
-          placeholder: demo prompt in the input box
-    - name: Login << Name of another section
-      fields:
-        - type: label
-          label: A bit of extra info for the user to understand these settings
-        - name: username
-          type: text
-          label: Username
-          value: ""
-        - name: password
-          type: password
-          label: Password
-          value: ""
+          placeholder: 127.0.0.1
+    # - name: Login << Name of another section
+    #   fields:
+    #     - type: label
+    #       label: A bit of extra info for the user to understand these settings
+    #     - name: username
+    #       type: text
+    #       label: Username
+    #       value: ""
+    #     - name: password
+    #       type: password
+    #       label: Password
+    #       value: ""

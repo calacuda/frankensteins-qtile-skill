@@ -8,7 +8,7 @@ A part of the [Frankenstein's Qtile](https://github.com/calacuda/frankensteins-q
 
 ## Examples
 
-- "Changes to desktop 4"
+- "Changes to desktop {group}"
 - "Setup layout {auto-desk layout name}"
 
 ## Credits

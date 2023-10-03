@@ -1,0 +1,2 @@
+focus on (desktop|group|) {group}
+shift focus to (desktop|group|) {group}
