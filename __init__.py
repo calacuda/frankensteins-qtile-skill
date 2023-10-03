@@ -24,7 +24,7 @@ class FrankensteinsQtile(MycroftSkill):
 
         if not self.is_group(group): return
 
-        self.log.info(f"switching qtile focus to group {group}", wait=True)
+        self.log.info(f"switching qtile focus to group {group}")
         res = requests.get(self.mk_url(f"focus-on/{group}"))
 
         if res.body.startswith("no group"):
@@ -41,7 +41,7 @@ class FrankensteinsQtile(MycroftSkill):
 
         if not self.is_group(group): return
 
-        self.log.info(f"moving window to the group called {group}", wait=True)
+        self.log.info(f"moving window to the group called {group}")
         res = requests.get(self.mk_url(f"move-to/{group}"))
         
         if res.body.startswith("no group"):
