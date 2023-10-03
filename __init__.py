@@ -63,7 +63,8 @@ class FrankensteinsQtile(MycroftSkill):
             return
 
         # TODO: add error handling incase url not reachable
-        res = requests.get(self.mk_url(f"/auto-desk/layout/{layout.replace(" ", "_")}"))
+        parsed_layout = layout.replace(" ", "_")
+        res = requests.get(self.mk_url(f"/auto-desk/layout/{parsed_layout}"))
 
         spelling = ", ".join(layout)
         self.speak(f"setting up layout {layout.title()} spelled {spelling}.")
