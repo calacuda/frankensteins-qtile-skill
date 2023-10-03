@@ -28,7 +28,7 @@ class FrankensteinsQtile(MycroftSkill):
         # TODO: add error handling incase url not reachable
         res = requests.get(self.mk_url(f"focus-on/{group}"))
 
-        if res.content.startswith("no group"):
+        if res.content.startswith(b"no group"):
             spelling = ", ".join(group)
             self.log.info(f"focus shifting failed")
             self.speak(f"{group.title()} spelled {spelling} is not a group name. Failed to switch focus.")
@@ -46,7 +46,7 @@ class FrankensteinsQtile(MycroftSkill):
         # TODO: add error handling incase url not reachable
         res = requests.get(self.mk_url(f"move-to/{group}"))
         
-        if res.content.startswith("no group"):
+        if res.content.startswith(b"no group"):
             spelling = ", ".join(group)
             self.log.info(f"moving of window failed")
             self.speak(f"{group.title()} spelled {spelling} is not a group name. Failed to move window.")
