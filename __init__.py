@@ -73,6 +73,22 @@ class FrankensteinsQtile(MycroftSkill):
             spelling = ", ".join(layout)
             self.speak(f"setting up layout {layout.title()} spelled {spelling} failed.")
 
+    @intent_handler("qtile.frankensteins.open-on.intent")
+    def handle_open_on(self, message):
+        program = message.data.get("program")
+        desktop = message.data.get("desktop")
+
+        if program is None or desktop is None:
+            self.speak("I need both a program and a desktop to launch it on")
+            return
+        
+        try:
+            res = requests.get(self.mk_url(f"/auto-desk/open-on/{desktop}/{program}"))
+        except ConnectionError:
+            self.speak("request to control API failed. is the API up? is the computer running?")
+        else:
+            self.speak_dialog("qtile.frankensteins.open-on")
+
 
 def create_skill():
     return FrankensteinsQtile()

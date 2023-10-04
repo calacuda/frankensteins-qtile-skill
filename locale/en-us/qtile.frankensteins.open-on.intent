@@ -1,0 +1,2 @@
+(open|launch) {program} (dot desktop|.desktop|. desktop|) on (desktop|group) {desktop}
+on (desktop|group) {desktop}, (open|launch) {program} (dot desktop|.desktop|. desktop|)
